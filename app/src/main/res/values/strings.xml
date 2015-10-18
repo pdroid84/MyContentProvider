@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyContentProvider</string>
+    <string name="fragment_title">This is the fragment!</string>
+    <string name="action_settings">Settings</string>
+</resources>

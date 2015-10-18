@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mycontentprovider.pdroid84.mycontentprovider" >
+
+    <permission android:name="com.mycontentprovider.pdroid84.provider.READ_MYPROVIDER"
+                android:protectionLevel="normal"
+                android:label="This is my Read permission" />
+    <permission android:name="com.mycontentprovider.pdroid84.provider.WRITE_MYPROVIDER"
+                android:protectionLevel="normal"
+                android:label="This is my write permission" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.mycontentprovider.pdroid84.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <!-- Define the required details for provider -->
+        <provider
+            android:authorities="com.mycontentprovider.pdroid84.provider"
+            android:name="com.mycontentprovider.pdroid84.provider.MyProvider"
+            android:readPermission="com.mycontentprovider.pdroid84.provider.READ_MYPROVIDER"
+            android:writePermission="com.mycontentprovider.pdroid84.provider.WRITE_MYPROVIDER"
+            android:exported="true"
+            android:syncable="false" />
+
+    </application>
+
+</manifest>
